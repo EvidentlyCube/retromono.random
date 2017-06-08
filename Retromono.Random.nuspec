@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Retromono.Random</id>
+        <version>1.0.0</version>
+        <authors>Maurycy Zarzycki Retrocade.net</authors>
+        <owners>retrocadenet</owners>
+        <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A set of pseudorandom number generators intended for use with Monogame projects</description>
+        <releaseNotes>Initial release including native random and XOR Shift</releaseNotes>
+        <copyright>Copyright 2017 Maurycy Zarzycki</copyright>
+        <tags>random prng monogame game</tags>
+    </metadata>
+    <files>
+        <file src="Retromono.Random\bin\Release\Retromono.Randomness.dll" target="lib\Retromono.Randomness.dll" />
+        <file src="README.txt" target="README.txt" />
+    </files>
+</package>

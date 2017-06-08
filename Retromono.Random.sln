@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retromono.Random", "Retromono.Random\Retromono.Random.csproj", "{B47988EA-24F3-4B98-BC98-07F37F28E2BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{FEFC828A-D7E0-463F-B179-9967990029C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B47988EA-24F3-4B98-BC98-07F37F28E2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47988EA-24F3-4B98-BC98-07F37F28E2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B47988EA-24F3-4B98-BC98-07F37F28E2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B47988EA-24F3-4B98-BC98-07F37F28E2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEFC828A-D7E0-463F-B179-9967990029C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFC828A-D7E0-463F-B179-9967990029C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFC828A-D7E0-463F-B179-9967990029C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFC828A-D7E0-463F-B179-9967990029C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
