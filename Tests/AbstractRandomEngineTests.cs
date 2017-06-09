@@ -7,10 +7,6 @@ namespace Tests {
     public class AbstractRandomEngineTests {
         public static double[] TestFractions = {0.0, 0.1, 0.2, 0.3, 0.4, 0.499999, 0.5, 0.500001, 0.6, 0.7, 0.8, 0.9, 1.0 - 0.000000000000001};
 
-        public static Type[] RandomClasses = {
-            typeof(NativeRandom)
-        };
-
         [Test]
         public void TestFractionsSanityCheck([ValueSource(nameof(TestFractions))] double fraction) {
             Assert.GreaterOrEqual(fraction, 0, "Test fraction is smaller than 0");
@@ -79,26 +75,6 @@ namespace Tests {
 
             Assert.GreaterOrEqual(value, double.MinValue / 2);
             Assert.Less(value, double.MaxValue / 2);
-        }
-
-        [Test]
-        public void Boolean_ChecksIfInputIsGreaterOrEqual(
-            [ValueSource(nameof(TestFractions))] double fraction,
-            [Values(0, 0.05, 0.1, 0.15, 0.5, 1)] double checks
-        ) {
-            var value = MockRandom.Seed(fraction).Boolean(checks);
-
-            Assert.AreEqual(value, fraction >= checks);
-        }
-
-        [Test]
-        public void Invertion_ChecksIfInputIsGreaterOrEqual(
-            [ValueSource(nameof(TestFractions))] double fraction,
-            [Values(0, 0.05, 0.1, 0.15, 0.5, 1)] double checks
-        ) {
-            var value = MockRandom.Seed(fraction).Invertion(checks);
-
-            Assert.AreEqual(value, fraction >= checks ? -1 : 1);
         }
     }
 }

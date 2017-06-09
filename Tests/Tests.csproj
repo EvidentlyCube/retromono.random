@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractRandomEngine_BooleanTests.cs" />
+    <Compile Include="AbstractRandomEngine_InvertionTests.cs" />
     <Compile Include="CommonRandomTests.cs" />
     <Compile Include="MockRandom.cs" />
     <Compile Include="AbstractRandomEngineTests.cs" />

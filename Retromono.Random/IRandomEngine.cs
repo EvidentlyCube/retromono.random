@@ -60,14 +60,14 @@ namespace Retromono.Randomness {
         /// <summary>
         /// Returns <c>true</c> or <c>false</c> with the specified chance.
         /// </summary>
-        /// <param name="fractionChance">Chance that the value will be <c>true</c>, where 0 means 100% chance, 0.5 means 50% chance and 1 means 0% chance</param>
+        /// <param name="trueChance">Chance that the value will be <c>true</c>, where 1 means 100% chance, 0.5 means 50% chance and 0 means 0% chance</param>
         /// <returns>A random boolean</returns>
-        bool Boolean(double fractionChance = 0.5);
+        bool Boolean(double trueChance = 0.5);
 
         /// <summary>
         /// Returns <c>-1</c> or <c>1</c> with the specified chance.
         /// </summary>
-        /// <param name="invertChance">Chance that the value will be <c>-1</c>, where 0 means 100% chance, 0.5 means 50% chance and 1 means 0% chance</param>
+        /// <param name="invertChance">Chance that the value will be <c>-1</c>, where 1 means 100% chance, 0.5 means 50% chance and 0 means 0% chance</param>
         /// <returns><c>-1</c> or <c>1</c></returns>
         int Invertion(double invertChance = 0.5);
 

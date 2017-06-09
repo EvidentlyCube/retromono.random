@@ -84,12 +84,12 @@ namespace Retromono.Randomness {
             return from + delta * Fraction() % delta;
         }
 
-        public bool Boolean(double fractionChance = 0.5) {
-            return Fraction() >= fractionChance;
+        public bool Boolean(double trueChance = 0.5) {
+            return Fraction() < trueChance;
         }
 
         public int Invertion(double invertChance = 0.5) {
-            return Fraction() >= invertChance ? -1 : 1;
+            return Fraction() < invertChance ? -1 : 1;
         }
 
         public string SpecificSeed {

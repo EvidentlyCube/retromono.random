@@ -70,19 +70,12 @@ namespace Tests {
                 random.RandomizeSeed();
                 var seed = random.SpecificSeed;
 
-                var results = new List<double>(SpecificSeedLookaheads);
-                for (var j = 0; j < SpecificSeedLookaheads; j++) {
-                    results.Add(random.Fraction());
-                }
-
+                var results = GetRolls(random, SpecificSeedLookaheads);
+                
                 var checkedRandom = Instantiate(engineType);
                 checkedRandom.SpecificSeed = seed;
 
-                var checkedResults = new List<double>(SpecificSeedLookaheads);
-                for (var j = 0; j < SpecificSeedLookaheads; j++) {
-                    checkedResults.Add(checkedRandom.Fraction());
-                }
-
+                var checkedResults = GetRolls(checkedRandom, SpecificSeedLookaheads);
                 CollectionAssert.AreEqual(results, checkedResults);
             }
         }
@@ -96,11 +89,7 @@ namespace Tests {
             var random = Instantiate(engineType);
             random.SetUniversalSeed(universalSeed);
 
-            var results = new List<double>(UniversalSeedLookaheads);
-            for (var j = 0; j < UniversalSeedLookaheads; j++) {
-                results.Add(random.Fraction());
-            }
-
+            var results = GetRolls(random, UniversalSeedLookaheads);
             var checkedRandom = Instantiate(engineType);
             for (var i = 0; i < UniversalSeedRepeats; i++) {
                 if (recreateInstanceEachStep)
@@ -108,12 +97,7 @@ namespace Tests {
 
                 checkedRandom.SetUniversalSeed(universalSeed);
 
-                var checkedResults = new List<double>(UniversalSeedLookaheads);
-                for (var j = 0; j < UniversalSeedLookaheads; j++) {
-                    checkedResults.Add(checkedRandom.Fraction());
-                }
-
-                CollectionAssert.AreEqual(results, checkedResults);
+                CollectionAssert.AreEqual(results, GetRolls(checkedRandom, UniversalSeedLookaheads));
             }
         }
 
@@ -127,6 +111,15 @@ namespace Tests {
         private void IsValidFraction(double fraction) {
             Assert.GreaterOrEqual(fraction, 0, "Test fraction is smaller than 0");
             Assert.Less(fraction, 1, "Test fraction is larger or equal to 1");
+        }
+
+        private List<double> GetRolls(IRandomEngine random, int count) {
+            var list = new List<double>(count);
+            for (var j = 0; j < UniversalSeedLookaheads; j++) {
+                list.Add(random.Fraction());
+            }
+
+            return list;
         }
     }
 }
